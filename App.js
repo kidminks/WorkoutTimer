@@ -21,7 +21,8 @@ import DrawerScreen from './src/component/DrawerScreen';
 
 const RouteConfigs = {
     SetTimer: {screen: SetTimer},
-    MultiExerciseTimer: {screen: MultiExerciseTimer}
+    MultiExerciseTimer: {screen: MultiExerciseTimer},
+    Setting: {screen: MultiExerciseTimer}
 };
 const DrawerNavigatorConfig = {
     drawerType: 'slide',

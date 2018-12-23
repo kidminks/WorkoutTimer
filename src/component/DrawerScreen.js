@@ -40,6 +40,16 @@ class DrawerScreen extends Component {
                         Multi Exercise
                     </Text>
                 </View>
+                <View>
+                    <Text
+                        style={
+                            this.selected_id==='Setting'?
+                                styles.selected_text:styles.not_selected_text
+                        }
+                        onPress={this.navigateToScreen('Setting')}>
+                        Settings
+                    </Text>
+                </View>
             </View>
         );
     }
