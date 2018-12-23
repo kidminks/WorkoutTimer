@@ -15,8 +15,8 @@ import {
     createAppContainer
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import SetTimer from './src/SetTimer';
-import  MultiExerciseTimer from  './src/MultiExerciseTimer';
+import SetTimer from './src/screens/SetTimer';
+import  MultiExerciseTimer from './src/screens/MultiExerciseTimer';
 import DrawerScreen from './src/component/DrawerScreen';
 
 const RouteConfigs = {
