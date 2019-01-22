@@ -6,7 +6,7 @@ import { DrawerActions } from 'react-navigation';
 class DrawerScreen extends Component {
     constructor(props){
         super(props);
-        this.selected_id = 'SetTimer';
+        this.selected_id = 'InputValue';
     }
     navigateToScreen = (route) => () => {
         const navigateAction = NavigationActions.navigate({
@@ -23,21 +23,11 @@ class DrawerScreen extends Component {
                 <View>
                     <Text
                         style={
-                            this.selected_id==='SetTimer'?
+                            this.selected_id==='InputValue'?
                                 styles.selected_text:styles.not_selected_text
                         }
-                        onPress={this.navigateToScreen('SetTimer')}>
+                        onPress={this.navigateToScreen('InputValue')}>
                         Set Timer
-                    </Text>
-                </View>
-                <View>
-                    <Text
-                        style={
-                            this.selected_id==='MultiExerciseTimer'?
-                                styles.selected_text:styles.not_selected_text
-                        }
-                        onPress={this.navigateToScreen('MultiExerciseTimer')}>
-                        Multi Exercise
                     </Text>
                 </View>
                 <View>
@@ -47,7 +37,7 @@ class DrawerScreen extends Component {
                                 styles.selected_text:styles.not_selected_text
                         }
                         onPress={this.navigateToScreen('Setting')}>
-                        Settings
+                        Set Warm-Up
                     </Text>
                 </View>
             </View>
@@ -56,11 +46,9 @@ class DrawerScreen extends Component {
 }
 const styles = StyleSheet.create({
     selected_text: {
-        color: 'red',
         fontSize: 30
     },
     not_selected_text: {
-        color: 'yellow',
         fontSize: 25
     }
 });

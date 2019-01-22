@@ -6,7 +6,6 @@ const commonStyle = StyleSheet.create({
         flex: 1,
         width: '100%',
         justifyContent: 'center',
-        backgroundColor: 'red'
     }
 });
 export default commonStyle;

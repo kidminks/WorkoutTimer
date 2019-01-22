@@ -15,19 +15,20 @@ import {
     createAppContainer
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import SetTimer from './src/screens/SetTimer';
-import  MultiExerciseTimer from './src/screens/MultiExerciseTimer';
+import InputValue from './src/screens/InputValue';
 import DrawerScreen from './src/component/DrawerScreen';
+import Timer from './src/screens/Timer';
+import Settings from './src/screens/SetWarmUp';
 
 const RouteConfigs = {
-    SetTimer: {screen: SetTimer},
-    MultiExerciseTimer: {screen: MultiExerciseTimer},
-    Setting: {screen: MultiExerciseTimer}
+    InputValue: {screen: InputValue},
+    Setting: {screen: Settings},
+    Timer: {screen: Timer}
 };
 const DrawerNavigatorConfig = {
     drawerType: 'slide',
     drawerPosition: 'right',
-    initialRouteName: 'SetTimer',
+    initialRouteName: 'InputValue',
     contentComponent: DrawerScreen
 };
 const DrawerNavigator = createDrawerNavigator(RouteConfigs,DrawerNavigatorConfig);
