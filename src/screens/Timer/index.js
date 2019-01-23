@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, Button} from 'react-native';
 import CountDown from '../../component/CountDown';
 import commonStyle from '../../commonStyle';
 import BackgroundTimer from 'react-native-background-timer';
+import {AdMobBanner} from "react-native-admob";
 
 function getMillisecond(time) {
     const t = (time.hours*60*60 + time.minutes*60 + time.seconds)*1000;
@@ -91,7 +92,7 @@ class Timer extends Component{
     render(){
         return(
             <View style={[commonStyle.main_block,{
-                justifyContent: 'flex-start'
+                justifyContent: 'space-between'
             }]}>
                 <View style={styles.inner_block}>
                     <Text style={styles.small_heading}>Sets Left</Text>
@@ -112,6 +113,12 @@ class Timer extends Component{
                                 onPress={() => this.props.navigation.goBack()}/>
                     </View>
                     }
+                <View style={styles.ad_block}>
+                    <AdMobBanner
+                        adSize="largeBanner"
+                        adUnitID="ca-app-pub-3940256099942544/6300978111"
+                    />
+                </View>
             </View>
         );
     };
@@ -124,6 +131,13 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
+    },
+    ad_block: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: 100
     },
     small_heading: {
         fontSize: 15,

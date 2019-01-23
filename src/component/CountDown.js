@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import commonStyle from '../commonStyle';
 import BackgroundTimer from 'react-native-background-timer';
+import Sound from 'react-native-sound';
 
 function convertMS( milliseconds ) {
     let hours, minutes, seconds;
@@ -25,11 +26,15 @@ class CountDown extends Component {
             type: this.props.type
         };
         this.time = convertMS(this.props.time);
+        this.bell = new Sound('bell.mp3', Sound.MAIN_BUNDLE);
     }
     componentDidMount(): void {
         const intervalId = BackgroundTimer.setInterval(() => {
             const time = this.state.time-1000;
             this.time = convertMS(this.state.time);
+            if(time<1000 && !this.bell.isPlaying()){
+                this.bell.play();
+            }
             if(time<-1000){
                 BackgroundTimer.clearInterval(intervalId);
                 this.props.onCompletion(this.state.type);

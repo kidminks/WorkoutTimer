@@ -4,6 +4,7 @@ import {NavigationActions} from 'react-navigation';
 import Timer from '../../component/InputCountdownTime';
 import commonStyle from '../../commonStyle';
 import { AsyncStorage } from "react-native"
+import {AdMobBanner} from "react-native-admob";
 
 function getMillisecond(time) {
     const t = (time.hours*60*60 + time.minutes*60 + time.seconds)*1000;
@@ -54,13 +55,25 @@ class SetWarmUp extends Component{
     }
     render(){
         return(
-            <View style={commonStyle.main_block}>
+            <View style={[commonStyle.main_block,{justifyContent: 'space-between'}]}>
+                <View style={styles.ad_block}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID="ca-app-pub-3940256099942544/6300978111"
+                    />
+                </View>
                 <View style={styles.inner_block}>
                     <Text>Set WarmUp Time</Text>
                     <Timer onUpdate={this.update_warm_up_time}/>
                 </View>
                 <View style={styles.inner_block}>
                     <Button title={'Set Time'} onPress={this.set_time}/>
+                </View>
+                <View style={styles.ad_block}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID="ca-app-pub-3940256099942544/6300978111"
+                    />
                 </View>
             </View>
         );
@@ -74,6 +87,11 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
+    },
+    ad_block: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center'
     },
     warm_up_block: {
         flexDirection: 'row',

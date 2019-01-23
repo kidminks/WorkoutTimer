@@ -5,7 +5,8 @@ import NumericInput from 'react-native-numeric-input';
 import RadioButton from '../../component/RadioButton';
 import Timer from '../../component/InputCountdownTime';
 import commonStyle from '../../commonStyle';
-import { AsyncStorage } from "react-native"
+import { AsyncStorage } from "react-native";
+import { AdMobBanner } from 'react-native-admob';
 
 async function storeData(){
     try {
@@ -110,6 +111,12 @@ class SetTimer extends Component{
     render(){
         return(
             <View style={commonStyle.main_block}>
+                <View style={styles.ad_block}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID="ca-app-pub-3940256099942544/6300978111"
+                    />
+                </View>
                 <View style={styles.warm_up_block}>
                         <View style={styles.radio_block_button}>
                             <RadioButton
@@ -152,7 +159,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         alignItems: 'center',
-        marginBottom: 10,
+        marginBottom: 10
+    },
+    ad_block: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center'
     },
     warm_up_block: {
         flexDirection: 'row',
